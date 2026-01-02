@@ -1,1 +1,133 @@
-hi
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>AI Face Attendance System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">AI Face Attendance</span>
+        </div>
+
+        <ul class="nav-center">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li>
+                <a href="https://github.com/ashokkaji26/ai-face-recognition-system.git" target="_blank">
+                    GitHub
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav-right">
+            <span id="userEmail" class="user-email hidden"></span>
+            <button id="logoutBtn" class="btn-outline hidden">Logout</button>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+        <h1>Smart Attendance using AI</h1>
+        <p>
+            An AI-powered face recognition system that automates attendance
+            using computer vision and machine learning.
+        </p>
+
+        <!-- AUTH CARD -->
+        <div id="authSection" class="auth-card">
+            <input id="nameInput" type="text" placeholder="Full Name (for signup)" />
+            <input id="emailInput" type="email" placeholder="Email address" />
+            <div class="auth-buttons">
+                <button id="signupBtn" class="btn-primary">Sign Up</button>
+                <button id="loginBtn" class="btn-success">Login</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+    <section id="features" class="features">
+        <h2>Why This Project?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                🎯
+                <h3>Accurate Detection</h3>
+                <p>Face detection using OpenCV & AI models.</p>
+            </div>
+
+            <div class="feature-card">
+                ⚡
+                <h3>Real-Time</h3>
+                <p>Instant recognition and attendance marking.</p>
+            </div>
+
+            <div class="feature-card">
+                🔐
+                <h3>Secure</h3>
+                <p>Email-based authentication with sessions.</p>
+            </div>
+
+            <div class="feature-card">
+                📈
+                <h3>Scalable</h3>
+                <p>FastAPI + MongoDB ready for production.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="how" class="how">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">1️⃣ Register / Login</div>
+            <div class="step">2️⃣ Upload / Capture Face</div>
+            <div class="step">3️⃣ Attendance Marked Automatically</div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>AI Face Attendance System</h4>
+            <p>
+                A modern AI-powered attendance system using face detection and recognition.
+                Built with Python, FastAPI, OpenCV, and MongoDB.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="https://github.com/ashokkaji26/ai-face-recognition-system" target="_blank">
+                GitHub Repository
+            </a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Connect</h4>
+            <div class="social-icons">
+                <a href="https://github.com/ashokkaji26" target="_blank">
+                    <img src="assests/images/github.svg" alt="GitHub" />
+                </a>
+                <a href="https://www.linkedin.com/in/ashokkaji26/" target="_blank">
+                    <img src="assests/images/linkedin.svg" alt="LinkedIn" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Ashok Kaji · Powered by AI, Computer Vision & Real-World Engineering
+    </div>
+</footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+pymongo
+python-dotenv
+opencv-python
+numpy
+email-validator
