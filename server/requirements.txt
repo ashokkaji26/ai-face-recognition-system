@@ -1,34 +1,24 @@
-# =====================
 # Backend framework
-# =====================
 fastapi
 uvicorn
 
-# =====================
 # Database
-# =====================
 pymongo
 python-dotenv
 
-# =====================
 # Validation
-# =====================
 pydantic
 email-validator
 
-# =====================
 # Image processing
-# =====================
 opencv-python
 numpy
 Pillow
 
-# =====================
-# Face recognition
-# =====================
-face-recognition==1.3.0
-
-# =====================
-# Production / Deployment
-# =====================
+# File uploads
 python-multipart
+
+# Face recognition (AI core)
+face-recognition
+face-recognition-models
+dlib
