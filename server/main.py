@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes.face import router as face_router
 from routes.auth import router as auth_router
 from routes.attendance import router as attendance_router
+from routes.admin import router as admin_router
 
 import cv2
 import numpy as np
@@ -30,6 +31,7 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(face_router)
 app.include_router(attendance_router)
+app.include_router(admin_router)
 
 # =========================
 # Load Haar Cascade safely

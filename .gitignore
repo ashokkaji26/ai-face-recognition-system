@@ -4,11 +4,19 @@
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 .env
+.env.*
 venv/
+.venv/
 
 # =====================
-# Node / Misc
+# FastAPI / Uvicorn
+# =====================
+*.log
+
+# =====================
+# Node / Frontend / Misc
 # =====================
 node_modules/
 
@@ -16,6 +24,13 @@ node_modules/
 # OS Files
 # =====================
 .DS_Store
+Thumbs.db
+
+# =====================
+# IDE / Editor
+# =====================
+.vscode/
+.idea/
 
 # =====================
 # ML / AI Models
@@ -23,3 +38,10 @@ node_modules/
 *.h5
 *.pkl
 *.onnx
+*.dat
+
+# =====================
+# Temporary / Cache
+# =====================
+.cache/
+pytest_cache/

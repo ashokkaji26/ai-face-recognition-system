@@ -58,49 +58,81 @@
             <p>Track and mark your attendance using AI face recognition</p>
         </div>
 
+        <!-- ================= ADMIN DASHBOARD ================= -->
+        <section id="adminDashboard" class="dashboard hidden">
+            <div class="dashboard-header">
+                <h2>🛡 Admin Analytics Dashboard</h2>
+                <p>System-wide attendance insights</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <h3 id="adminTotalUsers">0</h3>
+                    <p>Total Users</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminTotalAttendance">0</h3>
+                    <p>Total Attendance Records</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="adminTodayPresent">0</h3>
+                    <p>Present Today</p>
+                </div>
+            </div>
+
+            <div class="attendance-calendar">
+                <h3>👥 User-wise Attendance</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Present Days</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminUsersTable"></tbody>
+                </table>
+            </div>
+
+            <div class="attendance-calendar">
+                <h3>📅 Daily Attendance</h3>
+                <input type="date" id="adminDatePicker" />
+                <button id="loadDailyAttendance" class="btn-primary">Load</button>
+                <ul id="adminDailyList"></ul>
+            </div>
+        </section>
+
         <!-- ================= ATTENDANCE ACTIONS ================= -->
         <div class="attendance-actions">
-
-            <!-- Webcam -->
             <div class="action-card">
                 <h3>🎥 Use Webcam</h3>
                 <p>Capture your face using webcam and mark attendance instantly.</p>
                 <button id="openCameraBtn" class="btn-primary">Open Camera</button>
             </div>
 
-            <!-- Upload -->
             <div class="action-card">
                 <h3>📤 Upload Image</h3>
                 <p>Upload a clear face image to mark your attendance.</p>
                 <input type="file" id="uploadInput" accept="image/*" hidden />
                 <button id="uploadBtn" class="btn-success">Upload Image</button>
             </div>
-
         </div>
 
         <!-- ================= CAMERA BOX ================= -->
         <div id="cameraBox" class="camera-box hidden">
-            <video id="video" aria-label="Webcam preview" autoplay muted playsinline></video>
-
+            <video id="video" autoplay muted playsinline></video>
             <div class="camera-overlay">
                 <div class="face-box"></div>
                 <div class="face-text">Align your face inside the box</div>
             </div>
-
             <div id="countdown" class="countdown hidden">3</div>
             <canvas id="canvas" class="hidden" width="640" height="480"></canvas>
-
             <div class="camera-controls">
-                <button id="captureBtn" class="btn-primary">
-                    📸 Capture & Mark Attendance
-                </button>
-                <button id="closeCameraBtn" class="btn-outline">
-                    ✖ Close Camera
-                </button>
+                <button id="captureBtn" class="btn-primary">📸 Capture & Mark Attendance</button>
+                <button id="closeCameraBtn" class="btn-outline">✖ Close Camera</button>
             </div>
         </div>
 
-        <!-- ================= STATS ================= -->
         <div class="dashboard-stats">
             <div class="stat-card">
                 <h3 id="totalDays">0</h3>
@@ -116,17 +148,14 @@
             </div>
         </div>
 
-        <!-- ================= CALENDAR ================= -->
         <div class="attendance-calendar">
             <div class="calendar-header">
                 <h3>📅 Attendance Activity</h3>
-
                 <div class="calendar-controls">
                     <select id="monthSelect"></select>
                     <select id="yearSelect"></select>
                 </div>
             </div>
-
             <div id="calendarGrid" class="calendar-grid"></div>
         </div>
     </section>
@@ -135,33 +164,13 @@
     <section id="features" class="features">
         <h2>Why This Project?</h2>
         <div class="feature-grid">
-            <div class="feature-card">
-                🎯
-                <h3>Accurate Detection</h3>
-                <p>Face detection using OpenCV & AI models.</p>
-            </div>
-
-            <div class="feature-card">
-                ⚡
-                <h3>Real-Time</h3>
-                <p>Instant recognition and attendance marking.</p>
-            </div>
-
-            <div class="feature-card">
-                🔐
-                <h3>Secure</h3>
-                <p>Email-based authentication with sessions.</p>
-            </div>
-
-            <div class="feature-card">
-                📈
-                <h3>Scalable</h3>
-                <p>FastAPI + MongoDB ready for production.</p>
-            </div>
+            <div class="feature-card">🎯<h3>Accurate Detection</h3><p>Face detection using OpenCV & AI models.</p></div>
+            <div class="feature-card">⚡<h3>Real-Time</h3><p>Instant recognition and attendance marking.</p></div>
+            <div class="feature-card">🔐<h3>Secure</h3><p>Email-based authentication with sessions.</p></div>
+            <div class="feature-card">📈<h3>Scalable</h3><p>FastAPI + MongoDB ready for production.</p></div>
         </div>
     </section>
 
-    <!-- ================= HOW IT WORKS ================= -->
     <section id="how" class="how">
         <h2>How It Works</h2>
         <div class="steps">
@@ -171,52 +180,33 @@
         </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
                 <h4>AI Face Attendance System</h4>
-                <p>
-                    A modern AI-powered attendance system using face detection and recognition.
-                    Built with Python, FastAPI, OpenCV, and MongoDB.
-                </p>
+                <p>Built with FastAPI, OpenCV, MongoDB & real-world engineering.</p>
             </div>
-
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="https://github.com/ashokkaji26/ai-face-recognition-system" target="_blank">
-                    GitHub Repository
-                </a>
+                <a href="https://github.com/ashokkaji26/ai-face-recognition-system" target="_blank">GitHub Repository</a>
             </div>
-
             <div class="footer-section">
                 <h4>Connect</h4>
                 <div class="social-icons">
-                    <a href="https://github.com/ashokkaji26" target="_blank">
-                        <img src="assests/images/github.svg" alt="GitHub" />
-                    </a>
-                    <a href="https://www.linkedin.com/in/ashokkaji26/" target="_blank">
-                        <img src="assests/images/linkedin.svg" alt="LinkedIn" />
-                    </a>
+                    <a href="https://github.com/ashokkaji26" target="_blank"><img src="assests/images/github.svg"></a>
+                    <a href="https://www.linkedin.com/in/ashokkaji26/" target="_blank"><img src="assests/images/linkedin.svg"></a>
                 </div>
             </div>
         </div>
-
-        <div class="footer-bottom">
-            © 2026 Ashok Kaji · Powered by AI, Computer Vision & Real-World Engineering
-        </div>
+        <div class="footer-bottom">© 2026 Ashok Kaji</div>
     </footer>
 
-    <!-- ================= TOAST ================= -->
-    <div id="toast" class="toast hidden" hidden></div>
-
-    <!-- ================= LOADER ================= -->
-    <div id="loader" class="loader hidden" hidden>
+    <div id="toast" class="toast hidden"></div>
+    <div id="loader" class="loader hidden">
         <div class="spinner"></div>
         <p id="loaderText">Processing...</p>
     </div>
 
     <script src="js/app.js"></script>
 </body>
-
 </html>

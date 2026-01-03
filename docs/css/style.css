@@ -634,3 +634,26 @@ body {
   color: #e0e7ff;
   font-size: 0.95rem;
 }
+
+/* ================= ADMIN TABLE ================= */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+}
+
+.admin-table th {
+  color: #a5b4fc;
+}
+
+.admin-table td {
+  color: #e0e7ff;
+}
