@@ -1,11 +1,6 @@
-# ---- Base image ----
 FROM python:3.10-slim
 
-# ---- Environment ----
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# ---- System dependencies for dlib & OpenCV ----
+# ---- System dependencies for dlib & face-recognition ----
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
@@ -13,19 +8,19 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# ---- Working directory ----
+# ---- Set working directory ----
 WORKDIR /app
 
 # ---- Install Python dependencies ----
-COPY requirements.txt .
+COPY server/requirements.txt .
 RUN pip install --upgrade pip \
     && pip install --no-cache-dir -r requirements.txt
 
-# ---- Copy app code ----
-COPY . .
+# ---- Copy backend code ----
+COPY server/ .
 
 # ---- Expose port ----
 EXPOSE 8000
 
-# ---- Start server ----
+# ---- Start FastAPI ----
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
