@@ -25,7 +25,6 @@ body {
   z-index: 10;
 }
 
-/* LEFT */
 .nav-left {
   padding-left: 20px;
 }
@@ -37,7 +36,6 @@ body {
   white-space: nowrap;
 }
 
-/* CENTER */
 .nav-center {
   display: flex;
   justify-content: flex-end;
@@ -57,7 +55,6 @@ body {
   color: #93c5fd;
 }
 
-/* RIGHT */
 .nav-right {
   display: flex;
   align-items: center;
@@ -227,6 +224,200 @@ body {
   font-weight: 500;
 }
 
+/* ================= DASHBOARD ================= */
+.dashboard {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: auto;
+  animation: fadeInUp 0.6s ease;
+  text-align: center;
+}
+
+.dashboard-header {
+  margin-bottom: 40px;
+}
+
+.dashboard-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #dbeafe;
+}
+
+/* ================= ATTENDANCE ACTIONS ================= */
+.attendance-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+
+.action-card {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 24px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.action-card h3 {
+  margin-bottom: 10px;
+}
+
+.action-card p {
+  color: #dbeafe;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* ================= CAMERA BOX ================= */
+.camera-box {
+  max-width: 520px;
+  margin: 0 auto 50px;
+  background: rgba(15, 23, 42, 0.85);
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(14px);
+}
+
+.camera-box video {
+  width: 100%;
+  border-radius: 14px;
+}
+
+.camera-controls {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+/* ================= DASHBOARD STATS ================= */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 22px;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 22px;
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px);
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  color: #c7d2fe;
+}
+
+/* ================= CODECHEF STYLE CALENDAR ================= */
+.attendance-calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 28px;
+  border-radius: 18px;
+  backdrop-filter: blur(12px);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.calendar-header h3 {
+  font-size: 1.1rem;
+  color: #e0e7ff;
+}
+
+.calendar-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.calendar-controls select {
+  background: rgba(15, 23, 42, 0.9);
+  color: #e0e7ff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  gap: 5px;
+  justify-content: center;
+}
+
+/* Day box */
+.calendar-day {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+/* Present */
+.calendar-day.present {
+  background: #22c55e;
+}
+
+/* Hover */
+.calendar-day:hover {
+  transform: scale(1.35);
+}
+
+/* Tooltip */
+.calendar-day::after {
+  content: attr(data-date);
+  position: absolute;
+  bottom: 140%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.95);
+  color: #e0e7ff;
+  font-size: 0.7rem;
+  padding: 4px 6px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.calendar-day:hover::after {
+  opacity: 1;
+}
+
 /* ================= FOOTER ================= */
 .footer {
   background: rgba(15, 23, 42, 0.9);
@@ -234,7 +425,6 @@ body {
   margin-top: 70px;
 }
 
-/* 🔑 THIS IS THE FIX */
 .footer-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -270,7 +460,6 @@ body {
   color: #93c5fd;
 }
 
-/* ================= SOCIAL ICONS ================= */
 .social-icons {
   display: flex;
   gap: 14px;
@@ -299,7 +488,6 @@ body {
   height: 18px;
 }
 
-/* ================= FOOTER BOTTOM ================= */
 .footer-bottom {
   margin-top: 40px;
   text-align: center;
@@ -312,4 +500,137 @@ body {
 /* ================= UTIL ================= */
 .hidden {
   display: none;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= FACE ALIGNMENT OVERLAY ================= */
+
+.camera-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.face-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%);
+  border: 2px dashed rgba(34, 197, 94, 0.8);
+  border-radius: 16px;
+}
+
+.face-text {
+  position: absolute;
+  top: calc(50% + 130px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.85rem;
+  color: #a7f3d0;
+}
+
+/* ================= COUNTDOWN ================= */
+
+.countdown {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #22c55e;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 5;
+}
+
+/* ================= COUNTDOWN (WEBCAM) ================= */
+.countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: bold;
+  color: #22c55e;
+  padding: 20px 30px;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+
+/* ================= TOAST ================= */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: rgba(15, 23, 42, 0.95);
+  color: #e0e7ff;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  z-index: 999;
+  animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+  border-left: 5px solid #22c55e;
+}
+
+.toast.error {
+  border-left: 5px solid #ef4444;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ================= LOADER ================= */
+.loader {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+}
+
+.loader.hidden {
+  display: none !important;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255,255,255,0.2);
+  border-top: 4px solid #38bdf8;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 14px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loader p {
+  color: #e0e7ff;
+  font-size: 0.95rem;
 }

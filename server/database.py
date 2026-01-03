@@ -1,5 +1,6 @@
 import os
 from pymongo import MongoClient
+from pymongo.errors import ServerSelectionTimeoutError
 from dotenv import load_dotenv
 
 # =========================
@@ -15,13 +16,33 @@ if not MONGO_URI:
 # =========================
 # MongoDB Connection
 # =========================
-client = MongoClient(MONGO_URI)
+try:
+    client = MongoClient(
+        MONGO_URI,
+        serverSelectionTimeoutMS=5000  # 5s timeout
+    )
 
-# Database name
+    # Force connection check
+    client.admin.command("ping")
+
+except ServerSelectionTimeoutError:
+    raise RuntimeError("❌ Failed to connect to MongoDB (timeout)")
+
+# =========================
+# Database & Collections
+# =========================
 db = client["ai_face_attendance"]
 
-# Collections
 users_collection = db["users"]
 attendance_collection = db["attendance"]
+
+# =========================
+# Indexes (IMPORTANT)
+# =========================
+# Prevent duplicate attendance per day per user
+attendance_collection.create_index(
+    [("email", 1), ("date", 1)],
+    unique=True
+)
 
 print("✅ Connected to MongoDB (ai_face_attendance)")
