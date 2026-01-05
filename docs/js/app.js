@@ -1,5 +1,5 @@
 
-const API_BASE = "http://ai-face-recognition-system-production.up.railway.app";
+const API_BASE = "https://ai-face-recognition-system-production.up.railway.app";
 /* ================= ADMIN CONFIG ================= */
 const ADMIN_EMAILS = [
   "kaji@gmail.com",
